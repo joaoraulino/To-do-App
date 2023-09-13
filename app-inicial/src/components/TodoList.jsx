@@ -44,15 +44,15 @@ function TodoList() {
   return (
     <div className='flex flex-col justify-center items-center h-screen'>
       <h1 className='font-bold text-3xl'>To-Do List</h1>
-      <div className='flex flex-col flex-wrap h-4/5 w-[500px] min-w-400 border-black border-solid border-2 font-mono font-semibold text-base '>
-          <div className='w-screen p-2 justify-between'>
-            <input className="" type="text" placeholder='Insira uma tarefa'
+      <div className='gap-2 flex flex-col flex-wrap h-[660px] w-[500px] min-w-400 justify-center border-black border-solid border-2 font-mono font-semibold text-base p-4'>
+          <div className=' grid gap-2'>
+            <input className="border-black border-solid border-2 rounded-lg h-10 p-2" type="text" placeholder='Insira uma tarefa'
               value={task}
               onChange={handleInputChange}
             />
-            <button className="" onClick={handleAddTask}>Adicionar</button>
+            <button className="h-10 rounded-lg border-2 border-black border-solid" onClick={handleAddTask}>Adicionar</button>
           </div>
-          <div className="h-[500px] w-[460px] border-black border-solid border-2">
+          <div className="h-[450px] w-[460px] border-black border-solid border-2">
             <ul >
               {filteredTasks.map((task, index) => (
                 <li key={index}>
@@ -68,8 +68,8 @@ function TodoList() {
             </ul>
           </div>
 
-          <div className='flex flex-row gap-2'>
-            <p>{taskCount === 1 ? '1 tarefa' : `${taskCount} tarefas`}</p>
+          <div className="flex flex-row items-center justify-center gap-8">
+            <p className=''>{taskCount === 1 ? '1 tarefa' : `${taskCount} tarefas`}</p>
             <button onClick={() => setFilter('all')}>Todas</button>
             <button onClick={() => setFilter('completed')}>Concluídas</button>
             <button onClick={() => setFilter('pending')}>Pendentes</button>
